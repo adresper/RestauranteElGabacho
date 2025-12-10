@@ -1,0 +1,192 @@
+/* style.css - SOLO ESTILOS ESPECÍFICOS DEL INDEX */
+
+/* --- PORTADA (HERO) --- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('img/fondomejorado.png') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-logo { margin-bottom: 20px; }
+.hero-logo img { width: 280px; }
+
+.hero-text { 
+    color: #fff; 
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* TÍTULO PRINCIPAL - MONTSEERRAT EXTRABOLD */
+.hero-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    margin-bottom: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 800; /* ExtraBold */
+    letter-spacing: 2px;
+}
+
+/* SUBTÍTULO - POPPINS SEMIBOLD */
+.hero-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    margin-bottom: 0;
+    line-height: 1.4;
+    font-weight: 600; /* SemiBold */
+    letter-spacing: 1px;
+}
+
+/* --- OTRAS SECCIONES --- */
+.sobre-nosotros { background-color: #fff; padding: 80px 20px; }
+.sobre-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px; 
+}
+
+.sobre-texto h2 { 
+    font-size: 42px; 
+    color: #1a1a1a; 
+    margin-bottom: 25px; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+}
+.sobre-texto p { font-size: 20px; line-height: 1.8; color: #555; margin-bottom: 15px; }
+.sobre-imagen img { width: 100%; height: auto; border-radius: 10px; }
+
+.menu-destacado { background-color: #f8f8f8; padding: 80px 20px; }
+.menu-container { max-width: 1200px; margin: 0 auto; }
+.menu-container h2 { 
+    font-size: 42px; 
+    text-align: center; 
+    color: #1a1a1a; 
+    margin-bottom: 50px; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+}
+.platillos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
+.platillo-card { background-color: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.platillo-card:hover { transform: translateY(-10px); }
+.platillo-card img { width: 100%; height: 250px; object-fit: cover; }
+
+.btn-ver-menu { text-align: center; }
+.btn-ver-menu a { 
+    background-color: #17a2b8; 
+    color: #fff; 
+    padding: 15px 50px; 
+    text-decoration: none; 
+    font-size: 18px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    border-radius: 5px; 
+    display: inline-block; 
+    transition: background-color 0.3s; 
+}
+.btn-ver-menu a:hover { background-color: #138496; }
+
+.opiniones { background-color: #fff; padding: 80px 20px; }
+.opiniones-container { max-width: 1200px; margin: 0 auto; }
+.opiniones-container h2 { 
+    font-size: 42px; 
+    color: #1a1a1a; 
+    margin-bottom: 40px; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+}
+.opiniones-container p { font-size: 20px; line-height: 1.8; color: #555; margin-bottom: 20px; }
+
+footer { background-color: #003d5c; color: #fff; padding: 50px 20px; }
+.footer-container { max-width: 1200px; margin: 0 auto; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero-text h1 { font-size: 32px; }
+    .hero-text p { font-size: 18px; padding: 0 20px; }
+    .hero-logo img { width: 200px; }
+    .sobre-container, .platillos-grid { grid-template-columns: 1fr; }
+}
+/* === BOTÓN PEQUEÑO FLOTANTE === */
+.sidebar-toggle {
+    position: fixed;
+    right: 0;
+    top: 220px;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all .3s ease;
+}
+
+.sidebar-toggle i {
+    font-size: 18px;
+}
+
+/* === SIDEBAR DESPLEGABLE === */
+.sidebar-opciones {
+    position: fixed;
+    right: -150px; /* OCULTO */
+    top: 180px;
+    width: 150px;
+    background: #000;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    border-radius: 20px 0 0 20px;
+    z-index: 999;
+    transition: right .3s ease;
+}
+
+.sidebar-opciones .opcion {
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    width: 100%;
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar-opciones .opcion i {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.sidebar-opciones .opcion span {
+    font-size: 14px;
+}
+
+/* Sidebar abierto */
+.sidebar-opciones.activo {
+    right: 0;
+}
+@media (max-width: 768px) {
+    .sidebar-opciones {
+        right: -150px;
+        display: flex;
+    }
+
+    .sidebar-opciones.activo {
+        right: 0;
+    }
+}
+

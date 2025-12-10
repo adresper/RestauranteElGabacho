@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - El Gabacho</title>
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="menumovil.css"> <!-- Estilos Globales (Header/Footer) -->
+    <link rel="stylesheet" href="galeria.css">   <!-- Estilos de la Galería -->
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Ajustes rápidos de fuente */
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        body, p, button { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="page-galeria">
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav class="nav-desktop nav-left">
+                <a href="index.html">INICIO</a>
+                <a href="ubicacion.html">UBICACIÓN</a>
+            </nav>
+            <div class="logo-center">
+                <a href="index.html"><img src="img/logomejorado.png" alt="El Gabacho"></a>
+            </div>
+            <nav class="nav-desktop nav-right">
+                <a href="historia.html">HISTORIA</a>
+                <a href="menu.html">MENÚ</a>
+            </nav>
+            
+            <!-- Menú Móvil -->
+            <div id="nav-menu" class="mobile-menu">
+                <a href="index.html">INICIO</a>
+                <a href="ubicacion.html">UBICACIÓN</a>
+                <a href="menu.html">MENÚ</a>
+                <a href="historia.html">HISTORIA</a>
+                <a href="#galeria" class="active">GALERÍA</a> <!-- Activo aquí -->
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="gallery-wrapper">
+        
+        <!-- Título y Descripción -->
+        <div class="gallery-header">
+            <h1>Nuestra Galería</h1>
+            <p>Capturando el sabor y el ambiente de El Gabacho.</p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="gallery-filters">
+            <button class="filter-btn active" onclick="filterGallery('todos')">Todos</button>
+            <button class="filter-btn" onclick="filterGallery('platillos')">Platillos</button>
+            <button class="filter-btn" onclick="filterGallery('eventos')">Eventos</button>
+            <button class="filter-btn" onclick="filterGallery('lugar')">El Lugar</button>
+        </div>
+
+        <!-- Cuadrícula de Imágenes -->
+        <div class="gallery-grid">
+            
+            <!-- IMAGEN 1: Platillo -->
+            <div class="gallery-item platillos">
+                <img src="img/platillo-principal.png" alt="Camarones deliciosos">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- IMAGEN 2: Lugar -->
+            <div class="gallery-item lugar">
+                <img src="img/restaurante.jpeg" alt="Interior del restaurante">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- IMAGEN 3: Platillo -->
+            <div class="gallery-item platillos">
+                <img src="img/platillo-principal.png" alt="Tostada especial">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- IMAGEN 4: Evento -->
+            <div class="gallery-item eventos">
+                <!-- Usa una foto de gente conviviendo si tienes -->
+                <img src="img/restaurante.jpeg" alt="Música en vivo">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- IMAGEN 5: Platillo -->
+            <div class="gallery-item platillos">
+                <img src="img/platillo-principal.png" alt="Aguachile">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- IMAGEN 6: Lugar -->
+            <div class="gallery-item lugar">
+                <img src="img/fondomejorado.png" alt="Vista al mar">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+             <!-- IMAGEN 7: Platillo -->
+             <div class="gallery-item platillos">
+                <img src="img/platillo-principal.png" alt="Aguachile">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- IMAGEN 8: Lugar -->
+            <div class="gallery-item lugar">
+                <img src="img/fondomejorado.png" alt="Vista al mar">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 El Gabacho. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Script para los filtros de la galería -->
+    <script>
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Quitar clase activa de todos los botones
+            buttons.forEach(btn => btn.classList.remove('active'));
+            // Poner clase activa al botón clickeado (esto requiere un poco más de lógica si usas 'this', 
+            // pero para simplificar, al hacer click el estilo cambiará con CSS :focus o agregando clase manualmente)
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'todos') {
+                    item.style.display = 'block';
+                    // Pequeña animación de entrada
+                    item.style.animation = 'fadeIn 0.5s ease forwards';
+                } else {
+                    if (item.classList.contains(category)) {
+                        item.style.display = 'block';
+                        item.style.animation = 'fadeIn 0.5s ease forwards';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

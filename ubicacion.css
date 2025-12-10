@@ -1,0 +1,196 @@
+/* FONDO Y ESTRUCTURA PRINCIPAL */
+.location-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('img/fondomejorado.png') center/cover no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 20px 60px 20px; 
+}
+
+.location-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TÍTULO */
+.location-header {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.location-header h1 {
+    font-family: sans-serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.location-header p {
+    font-size: 20px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* GRID DE CONTACTO */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 30px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* COLUMNA INFO */
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    background-color: #e0f7fa;
+    color: #00838f;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.info-details h3 {
+    font-size: 18px;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+.info-details p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.link-action {
+    color: #00838f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.phone-number {
+    display: block;
+    color: #1a1a1a;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+/* HORARIOS */
+.hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+    color: #555;
+}
+
+.hours-list strong {
+    color: #333;
+}
+
+/* COLUMNA MAPA */
+.map-column {
+    height: 100%;
+    min-height: 500px;
+}
+
+.map-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 5px solid #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .map-column {
+        min-height: 300px;
+        order: -1;
+    }
+
+    .location-hero {
+        padding-top: 120px;
+    }
+
+    .location-header h1 {
+        font-size: 32px;
+    }
+}
+
+.reviews-section {
+    margin-top: 50px;
+    padding: 40px 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    color: #070707;
+    text-align: center;
+}
+
+.reviews-section h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,217 @@
+/* menu.css - SOLO ESTILOS ESPECÍFICOS DEL MENÚ */
+
+/* 1. SECCIÓN INTERACTIVA (ACORDEÓN) */
+.menu-interactive-hero {
+    background-color: #0f172a; 
+    height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; 
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-title-overlay {
+    position: absolute;
+    top: 100px;
+    text-align: center;
+    color: white;
+    z-index: 10;
+    pointer-events: none;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero-title-overlay h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+}
+
+.hero-title-overlay p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+    color: #ffd700;
+}
+
+.panels-container {
+    display: flex;
+    width: 90vw;
+    max-width: 1200px;
+    height: 60vh;
+    margin-top: 60px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    color: #fff;
+    cursor: pointer;
+    flex: 1;
+    margin: 0;
+    position: relative;
+    transition: flex 0.7s cubic-bezier(0.05, 0.6, 0.4, 0.9);
+    text-decoration: none;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4); 
+}
+
+.panel:last-child { border-right: none; }
+
+.panel h3 {
+    font-size: 1.5rem;
+    position: absolute;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    bottom: 50%;
+    left: 50%;
+    translate: -50% 50%;
+}
+
+.panel.active {
+    flex: 5;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.1);
+}
+
+.panel.active h3 {
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    bottom: 30px;
+    left: 30px;
+    translate: 0 0;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+}
+
+/* 2. CONTENEDOR PRINCIPAL */
+.menu-wrapper {
+    background-color: #fff;
+    padding-bottom: 80px;
+}
+
+/* 3. NAVEGACIÓN DE CATEGORÍAS */
+.menu-categories {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: sticky;
+    top: 70px;
+    z-index: 900;
+    flex-wrap: wrap;
+}
+
+.cat-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.cat-link.cold:hover { color: #0099cc; border-bottom-color: #0099cc; }
+.cat-link.hot:hover { color: #cc3333; border-bottom-color: #cc3333; }
+.cat-link.special:hover { color: #e6b800; border-bottom-color: #e6b800; }
+.cat-link.drinks:hover { color: #333; border-bottom-color: #333; }
+
+/* 4. SECCIONES DEL MENÚ */
+.menu-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 4rem;
+    font-family: 'Great Vibes', cursive; 
+    margin: 0;
+    font-weight: 400;
+    display: inline-block; 
+    border-bottom: 3px solid currentColor;
+    padding-bottom: 10px;
+}
+
+.section-cold h2 { color: #0099cc; }
+.section-hot h2 { color: #cc3333; }
+.section-special h2 { color: #e6b800; }
+.section-drinks h2 { color: #333; }
+
+/* 5. LISTAS GENERALES */
+.menu-list-container {
+    background-color: #fff;
+    padding: 0;
+}
+
+.menu-list-container h4 {
+    font-size: 1.6rem;
+    margin: 40px 0 20px;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.list-item span:first-child { font-weight: 500; }
+
+.dots {
+    flex: 1;
+    border-bottom: 2px dotted #e0e0e0;
+    margin: 0 10px 5px 10px;
+}
+
+.list-price { font-weight: 700; color: #b98e2d; }
+
+.dessert { color: #d32f2f; font-weight: bold; }
+.dessert-title { color: #d32f2f !important; }
+
+/* Responsive específico del menú */
+@media (max-width: 768px) {
+    .menu-interactive-hero { height: auto; padding-bottom: 40px; }
+    .panels-container { flex-direction: column; height: 80vh; width: 95vw; }
+    .panel { width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .panel h3 { writing-mode: horizontal-tb; transform: rotate(0deg); bottom: 20px; left: 20px; translate: 0 0; font-size: 1.2rem; }
+    .panel.active h3 { font-size: 1.8rem; }
+    
+    .menu-categories { top: 60px; gap: 10px; padding: 10px; }
+    .cat-link { font-size: 0.75rem; padding: 5px; }
+    
+    .section-title h2 { font-size: 3rem; }
+}

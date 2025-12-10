@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - El Gabacho</title>
+    
+<head>
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTILOS - ORDEN IMPORTANTE -->
+    <link rel="stylesheet" href="estilos-comunes.css"> <!-- PRIMERO -->
+    
+    <!-- SOLUCIÓN TEMPORAL - AGREGA ESTO -->
+    <style>
+        /* FORZAR A QUE SE RESPETEN LOS ESTILOS */
+        .mobile-menu:not(.active) {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }
+        
+        @media (min-width: 901px) {
+            .menu-toggle {
+                display: none !important;
+                visibility: hidden !important;
+            }
+        }
+    </style>
+    
+    <link rel="stylesheet" href="menu.css"> <!-- ÚLTIMO -->
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-menu">
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav class="nav-desktop nav-left">
+                <a href="index.html">INICIO</a>
+                <a href="ubicacion.html">UBICACIÓN</a>
+            </nav>
+            <div class="logo-center">
+                <a href="index.html"><img src="img/logomejorado.png" alt="El Gabacho"></a>
+            </div>
+            <nav class="nav-desktop nav-right">
+                <a href="historia.html">HISTORIA</a>
+                <a href="galeria.html">GALERÍA</a>
+            </nav>
+            <!-- Menú Móvil CORREGIDO -->
+            <div id="nav-menu" class="mobile-menu">
+                <a href="index.html">INICIO</a>
+                <a href="ubicacion.html">UBICACIÓN</a>
+                <a href="historia.html">HISTORIA</a>
+                <a href="galeria.html">GALERÍA</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- PORTADA INTERACTIVA (ACORDEÓN) -->
+    <section class="menu-interactive-hero">
+        <div class="hero-title-overlay">
+            <h1>NUESTRO MENÚ</h1>
+            <p>Sabor y tradición del mar</p>
+        </div>
+        <div class="panels-container">
+            <a href="#barra-fria" class="panel" style="background-image: url('img/barrafriafoto.jpeg')"><h3>BARRA FRÍA</h3></a>
+            <a href="#barra-caliente" class="panel" style="background-image: url('img/barracalientefoto.jpeg')"><h3>BARRA CALIENTE</h3></a>
+            <a href="#especialidades" class="panel" style="background-image: url('img/especialidadfoto.jpeg')"><h3>ESPECIALIDADES</h3></a>
+            <a href="#bebidas" class="panel" style="background-image: url('img/restaurante.jpeg')"><h3>BEBIDAS</h3></a>
+        </div>
+    </section>
+
+    <!-- CONTENIDO DEL MENÚ -->
+    <main id="menu-content" class="menu-wrapper">
+        
+        <!-- Navegación interna del menú -->
+        <nav class="menu-categories">
+            <a href="#barra-fria" class="cat-link cold">Barra Fría</a>
+            <a href="#barra-caliente" class="cat-link hot">Barra Caliente</a>
+            <a href="#especialidades" class="cat-link special">Especialidades</a>
+            <a href="#extras" class="cat-link">Extras</a>
+            <a href="#bebidas" class="cat-link drinks">Bebidas</a>
+        </nav>
+
+        <!-- BARRA FRÍA -->
+        <section id="barra-fria" class="menu-section section-cold">
+            <div class="section-title">
+                <h2>Barra Fría</h2>
+            </div>
+            <div class="menu-list-container">
+                <h4>AGUACHILES Y CEVICHES</h4>
+                <div class="list-item"><span>Aguachiles (Rojos, Verdes o Negros)</span><span class="dots"></span><span class="list-price">$265.00</span></div>
+                <div class="list-item"><span>Aguachiles Tricolor</span><span class="dots"></span><span class="list-price">$265.00</span></div>
+                <div class="list-item"><span>Camarones Naturales</span><span class="dots"></span><span class="list-price">$350.00</span></div>
+                <div class="list-item"><span>Camarón con Pulpo para picar</span><span class="dots"></span><span class="list-price">$285.00</span></div>
+                <div class="list-item"><span>Campechana</span><span class="dots"></span><span class="list-price">$245.00</span></div>
+                <div class="list-item"><span>Ceviche de Camarón (Natural)</span><span class="dots"></span><span class="list-price">$210.00</span></div>
+                <div class="list-item"><span>Ceviche de Camarón (Rojo, Verde o Negro)</span><span class="dots"></span><span class="list-price">$230.00</span></div>
+                <div class="list-item"><span>Ceviche de Sierra (Temporada)</span><span class="dots"></span><span class="list-price">$210.00</span></div>
+                <div class="list-item"><span>Ceviche de Pescado</span><span class="dots"></span><span class="list-price">$180.00</span></div>
+                
+                <h4>COCTELES Y ENSALADAS</h4>
+                <div class="list-item"><span>Coctel de Camarón</span><span class="dots"></span><span class="list-price">$245.00</span></div>
+                <div class="list-item"><span>Coctel de Camarón con Pulpo</span><span class="dots"></span><span class="list-price">$250.00</span></div>
+                <div class="list-item"><span>Coctel de Pulpo</span><span class="dots"></span><span class="list-price">$260.00</span></div>
+                <div class="list-item"><span>Ensalada de Camarón</span><span class="dots"></span><span class="list-price">$245.00</span></div>
+                <div class="list-item"><span>Ensalada de Camarones asados</span><span class="dots"></span><span class="list-price">$260.00</span></div>
+                <div class="list-item highlight-item"><span>Mariscada Chica</span><span class="dots"></span><span class="list-price">$280.00</span></div>
+                <div class="list-item highlight-item"><span>Mariscada Grande</span><span class="dots"></span><span class="list-price">$520.00</span></div>
+                <div class="list-item"><span>Molcajete (Rojo, Verde o Negro)</span><span class="dots"></span><span class="list-price">$420.00</span></div>
+                
+                <h4>TOSTADAS</h4>
+                <div class="list-item"><span>Tostada de Ceviche de Camarón</span><span class="dots"></span><span class="list-price">$95.00</span></div>
+                <div class="list-item"><span>Tostada de Ceviche de Camarón Cocido</span><span class="dots"></span><span class="list-price">$135.00</span></div>
+                <div class="list-item"><span>Tostada de Ceviche de Pescado</span><span class="dots"></span><span class="list-price">$85.00</span></div>
+                <div class="list-item"><span>Tostada Especial</span><span class="dots"></span><span class="list-price">$260.00</span></div>
+                <div class="list-item"><span>Tostada de Jaiba (Temporada)</span><span class="dots"></span><span class="list-price">$135.00</span></div>
+                <div class="list-item"><span>Tostada de Ahogados</span><span class="dots"></span><span class="list-price">$145.00</span></div>
+                <div class="list-item"><span>Tostada de Atún</span><span class="dots"></span><span class="list-price">$130.00</span></div>
+                <div class="list-item"><span>Tostada de Pulpo</span><span class="dots"></span><span class="list-price">$150.00</span></div>
+                
+                <h4>ESPECIALES FRÍOS</h4>
+                <div class="list-item"><span>Torre de Mariscos</span><span class="dots"></span><span class="list-price">$420.00</span></div>
+                <div class="list-item"><span>Copa Loca</span><span class="dots"></span><span class="list-price">$360.00</span></div>
+                <div class="list-item"><span>Docena de Ostiones</span><span class="dots"></span><span class="list-price">$200.00</span></div>
+                <div class="list-item"><span>Docena de Almejas</span><span class="dots"></span><span class="list-price">$120.00</span></div>
+                <div class="list-item"><span>Consomé Extra</span><span class="dots"></span><span class="list-price">$35.00</span></div>
+            </div>
+        </section>
+
+        <!-- BARRA CALIENTE -->
+        <section id="barra-caliente" class="menu-section section-hot">
+            <div class="section-title"><h2>Barra Caliente</h2></div>
+            <div class="menu-list-container">
+                <h4>MACHACAS Y TACOS</h4>
+                <div class="list-item"><span>Machaca de Botete</span><span class="dots"></span><span class="list-price">$300.00</span></div>
+                <div class="list-item"><span>Machaca de Camarón</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Machaca de Pescado</span><span class="dots"></span><span class="list-price">$220.00</span></div>
+                <div class="list-item"><span>Taco de Marlin</span><span class="dots"></span><span class="list-price">$70.00</span></div>
+                <div class="list-item"><span>Taco de Filete Empanizado</span><span class="dots"></span><span class="list-price">$90.00</span></div>
+                <div class="list-item"><span>Taco de Camarón Empanizado</span><span class="dots"></span><span class="list-price">$95.00</span></div>
+                <div class="list-item"><span>Taco de Chicharrón de Botete</span><span class="dots"></span><span class="list-price">$100.00</span></div>
+                <div class="list-item"><span>Taco al Gabacho (Pieza)</span><span class="dots"></span><span class="list-price">$100.00</span></div>
+                <div class="list-item"><span>Taco de Pulpo</span><span class="dots"></span><span class="list-price">$105.00</span></div>
+                <div class="list-item"><span>Taco de Pulpo al Ajillo</span><span class="dots"></span><span class="list-price">$110.00</span></div>
+                <div class="list-item"><span>Taco de Camarón al Ajillo</span><span class="dots"></span><span class="list-price">$110.00</span></div>
+                <div class="list-item"><span>Orden de Quesadillas (3)</span><span class="dots"></span><span class="list-price">$100.00</span></div>
+                <div class="list-item"><span>Milanesa de Pollo</span><span class="dots"></span><span class="list-price">$190.00</span></div>
+
+                <h4>PLATILLOS FUERTES</h4>
+                <div class="list-item"><span>Camarones (Sarandeados, Ajo, Diabla)</span><span class="dots"></span><span class="list-price">$275.00</span></div>
+                <div class="list-item"><span>Camarones Empanizados</span><span class="dots"></span><span class="list-price">$260.00</span></div>
+                <div class="list-item"><span>Camarones Rancheros</span><span class="dots"></span><span class="list-price">$275.00</span></div>
+                <div class="list-item"><span>Camarones Rellenos</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Chicharrones de Botete</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Chicharrones de Pescado</span><span class="dots"></span><span class="list-price">$210.00</span></div>
+                <div class="list-item"><span>Chicharrones de Pargo (Kilo)</span><span class="dots"></span><span class="list-price">$520.00</span></div>
+                <div class="list-item"><span>Chicharrones de Atún</span><span class="dots"></span><span class="list-price">$250.00</span></div>
+                <div class="list-item"><span>Chicharrones de Camarón</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Chicharrones Mixtos</span><span class="dots"></span><span class="list-price">$300.00</span></div>
+                <div class="list-item"><span>Chicharrones Botete/Camarón Encebollados</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                
+                <h4>FILETES Y PESCADOS</h4>
+                <div class="list-item"><span>Filete Empanizado</span><span class="dots"></span><span class="list-price">$255.00</span></div>
+                <div class="list-item"><span>Filete Ranchero, Ajo, Diabla, Encebollado</span><span class="dots"></span><span class="list-price">$260.00</span></div>
+                <div class="list-item"><span>Pescado Frito (Kilo)</span><span class="dots"></span><span class="list-price">$400.00</span></div>
+                <div class="list-item"><span>Pescado Especial (Kilo)</span><span class="dots"></span><span class="list-price">$500.00</span></div>
+                <div class="list-item"><span>Pescado Sarandeado (Kilo)</span><span class="dots"></span><span class="list-price">$420.00</span></div>
+                <div class="list-item"><span>Pescado Sarandeado Robalo/Pargo (Kilo)</span><span class="dots"></span><span class="list-price">$510.00</span></div>
+                <div class="list-item"><span>Albóndigas de Camarón</span><span class="dots"></span><span class="list-price">$235.00</span></div>
+                <div class="list-item"><span>Sopa de Mariscos</span><span class="dots"></span><span class="list-price">$235.00</span></div>
+                <div class="list-item"><span>Sopa de Mariscos Premiada</span><span class="dots"></span><span class="list-price">$260.00</span></div>
+            </div>
+        </section>
+
+        <!-- ESPECIALIDADES -->
+        <section id="especialidades" class="menu-section section-special">
+            <div class="section-title"><h2>Especialidades</h2></div>
+            <div class="menu-list-container">
+                <div class="list-item"><span>Botete en Salsa de Ostión</span><span class="dots"></span><span class="list-price">$300.00</span></div>
+                <div class="list-item"><span>Camarones en Salsa de Ostión</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item highlight-item"><span>Camarón al Gabacho</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Camarones a Las Glorias</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Camarones Gratinados</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Camarones al Ajillo (Especial)</span><span class="dots"></span><span class="list-price">$310.00</span></div>
+                <div class="list-item"><span>Camarones Culichi</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Camarones Empanizados al Coco</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Camarones en Crema de Queso</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Pulpo al Ajillo</span><span class="dots"></span><span class="list-price">$360.00</span></div>
+                <div class="list-item"><span>Pulpo al Ajillo Entero (Kilo)</span><span class="dots"></span><span class="list-price">$1060.00</span></div>
+                <div class="list-item"><span>Empapelado Especial</span><span class="dots"></span><span class="list-price">$250.00</span></div>
+                <div class="list-item"><span>Filete Especial</span><span class="dots"></span><span class="list-price">$290.00</span></div>
+                <div class="list-item"><span>Filete Ranchero Especial</span><span class="dots"></span><span class="list-price">$295.00</span></div>
+                <div class="list-item highlight-item"><span>Filete al Gabacho</span><span class="dots"></span><span class="list-price">$280.00</span></div>
+                <div class="list-item"><span>Filete al Ajillo (Especial)</span><span class="dots"></span><span class="list-price">$280.00</span></div>
+                <div class="list-item"><span>Filete Relleno</span><span class="dots"></span><span class="list-price">$310.00</span></div>
+                <div class="list-item"><span>Mariscada Caliente (Mínimo 2 personas)</span><span class="dots"></span><span class="list-price">$320.00</span></div>
+                <div class="list-item"><span>Empanadas de Camarón (3)</span><span class="dots"></span><span class="list-price">$260.00</span></div>
+                <div class="list-item"><span>Orden de Pellizcadas</span><span class="dots"></span><span class="list-price">$100.00</span></div>
+                <div class="list-item"><span>Pellizcada Especial</span><span class="dots"></span><span class="list-price">$150.00</span></div>
+                <div class="list-item"><span>Hamburguesas (Pollo / Carne)</span><span class="dots"></span><span class="list-price">$120.00</span></div>
+                <div class="list-item"><span>Hamburguesa de Camarón</span><span class="dots"></span><span class="list-price">$210.00</span></div>
+                <div class="list-item"><span>Pechuga de Pollo a la Plancha</span><span class="dots"></span><span class="list-price">$190.00</span></div>
+            </div>
+        </section>
+
+        <!-- EXTRAS -->
+        <section id="extras" class="menu-section">
+            <div class="section-title"><h2>Extras</h2></div>
+            <div class="menu-list-container">
+                <div class="list-item"><span>Aguacate (1/2)</span><span class="dots"></span><span class="list-price">$20.00</span></div>
+                <div class="list-item"><span>Aguacate (1)</span><span class="dots"></span><span class="list-price">$30.00</span></div>
+                <div class="list-item"><span>Ensalada Verde</span><span class="dots"></span><span class="list-price">$30.00</span></div>
+                <div class="list-item"><span>Ensalada en Crema</span><span class="dots"></span><span class="list-price">$45.00</span></div>
+                <div class="list-item"><span>Orden de Frijol</span><span class="dots"></span><span class="list-price">$30.00</span></div>
+                <div class="list-item"><span>Orden de Arroz</span><span class="dots"></span><span class="list-price">$40.00</span></div>
+                <div class="list-item"><span>Orden de Papas Fritas</span><span class="dots"></span><span class="list-price">$50.00</span></div>
+                <div class="list-item"><span>Orden de Tortillas Extras</span><span class="dots"></span><span class="list-price">$15.00</span></div>
+            </div>
+        </section>
+
+        <!-- BEBIDAS -->
+        <section id="bebidas" class="menu-section section-drinks">
+            <div class="section-title"><h2>Bebidas y Postres</h2></div>
+            <div class="menu-list-container">
+                <div class="list-item"><span>Agua Botella 600 ml</span><span class="dots"></span><span class="list-price">$25.00</span></div>
+                <div class="list-item"><span>Cerveza Lata</span><span class="dots"></span><span class="list-price">$40.00</span></div>
+                <div class="list-item"><span>Cerveza Ultra Botella</span><span class="dots"></span><span class="list-price">$50.00</span></div>
+                <div class="list-item"><span>Jarra de Limonada Natural</span><span class="dots"></span><span class="list-price">$140.00</span></div>
+                <div class="list-item"><span>Jarra de Limonada Mineral</span><span class="dots"></span><span class="list-price">$170.00</span></div>
+                <div class="list-item"><span>Jarra de Jamaica</span><span class="dots"></span><span class="list-price">$120.00</span></div>
+                <div class="list-item"><span>Copa de Limonada Natural</span><span class="dots"></span><span class="list-price">$60.00</span></div>
+                <div class="list-item"><span>Copa de Limonada Mineral</span><span class="dots"></span><span class="list-price">$70.00</span></div>
+                <div class="list-item"><span>Copa de Jamaica</span><span class="dots"></span><span class="list-price">$45.00</span></div>
+                <div class="list-item"><span>Michelada</span><span class="dots"></span><span class="list-price">$85.00</span></div>
+                <div class="list-item"><span>Michelada Ultra</span><span class="dots"></span><span class="list-price">$90.00</span></div>
+                <div class="list-item"><span>Refresco Botella</span><span class="dots"></span><span class="list-price">$35.00</span></div>
+                <div class="list-item"><span>Refresco de 600 ml</span><span class="dots"></span><span class="list-price">$40.00</span></div>
+                <div class="list-item"><span>Clamato Preparado</span><span class="dots"></span><span class="list-price">$55.00</span></div>
+                <div class="list-item"><span>Vaso escarchado</span><span class="dots"></span><span class="list-price">$35.00</span></div>
+                <div class="list-item"><span>Té / Café</span><span class="dots"></span><span class="list-price">$40.00</span></div>
+                <h4 class="dessert-title" style="margin-top: 30px;">Postres</h4>
+                <div class="list-item dessert"><span>Flan Casero</span><span class="dots"></span><span class="list-price">$70.00</span></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 El Gabacho Restaurante. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const panelsContainer = document.querySelector('.panels-container');
+        const panels = document.querySelectorAll('.panel');
+
+        panels.forEach(panel => {
+            panel.addEventListener('mouseenter', () => {
+                removeActiveClasses();
+                panel.classList.add('active');
+            });
+        });
+
+        panelsContainer.addEventListener('mouseleave', () => {
+            removeActiveClasses();
+        });
+
+        function removeActiveClasses() {
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugerencias - El Gabacho</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="estilos-comunes.css">
+    <link rel="stylesheet" href="ubicacion.css">
+
+    <!-- Formulario bonito -->
+    <link rel="stylesheet" href="sugerencias.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        
+        <nav class="nav-desktop nav-left">
+            <a href="index.html">INICIO</a>
+            <a href="menu.html">MENU</a>
+        </nav>
+        
+        <div class="logo-center">
+            <a href="index.html"><img src="img/logomejorado.png" alt="El Gabacho"></a>
+        </div>
+        
+        <nav class="nav-desktop nav-right">
+            <a href="historia.html">HISTORIA</a>
+            <a href="galeria.html">GALERÍA</a>
+        </nav>
+        
+        <div id="nav-menu" class="mobile-menu">
+            <a href="index.html">INICIO</a>
+            <a href="menu.html">MENÚ</a>
+            <a href="historia.html">HISTORIA</a>
+            <a href="galeria.html">GALERÍA</a>
+        </div>
+    </div>
+</header>
+
+
+<main class="location-hero">
+    <div class="sugerencias-container">
+
+        <div class="form-wrapper">
+            <h2>Envíanos un mensaje</h2>
+            <p class="subtext">¿Tienes una sugerencia, duda o comentario? ¡Queremos escucharte!</p>
+
+            <form id="sugerenciasForm" action="https://formspree.io/f/xqarpkgv" method="POST">
+
+                <div class="row-2">
+                    <div class="input-group">
+                        <label>Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                        <small class="error" id="error-nombre"></small>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email:</label>
+                        <input type="email" id="email" name="email">
+                        <small class="error" id="error-email"></small>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Asunto:</label>
+                    <input type="text" id="asunto" name="asunto">
+                    <small class="error" id="error-asunto"></small>
+                </div>
+
+                <div class="input-group">
+                    <label>Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                    <small class="error" id="error-mensaje"></small>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                <p id="form-success" class="success-msg"></p>
+
+            </form>
+        </div>
+
+    </div>
+</main>
+
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025 El Gabacho Restaurante. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- Validación del formulario -->
+<script src="sugerencias.js"></script>
+
+</body>
+</html>

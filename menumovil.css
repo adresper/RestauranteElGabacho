@@ -1,0 +1,237 @@
+/* --- 1. RESET Y ESTILOS BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- 2. HEADER Y NAVEGACIÓN --- */
+header {
+    background-color: transparent;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+header.scrolled {
+    background-color: #0f172a; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    padding: 5px 0;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Menús de Escritorio (Se ocultan en celular) */
+.nav-desktop {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex: 1;
+}
+
+.nav-left { justify-content: flex-end; }
+.nav-right { justify-content: flex-start; }
+
+.nav-desktop a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    transition: color 0.3s;
+    font-family: sans-serif;
+    white-space: nowrap;
+}
+
+.nav-desktop a:hover {
+    color: #b98e2d; /* Dorado al pasar el mouse */
+}
+
+/* Logo Central */
+.logo-center {
+    margin: 0 40px;
+    flex-shrink: 0;
+}
+
+.logo-center img {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.logo-center img:hover {
+    transform: scale(1.1);
+}
+
+/* --- 3. MENÚ MÓVIL (CORREGIDO PARA FONDO SÓLIDO) --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100;
+}
+
+.mobile-menu {
+    display: none !important; /* Oculto siempre en PC */
+    position: absolute;
+    top: 100%; /* Aparece justo debajo de la barra */
+    left: 0;
+    width: 100%;
+    
+    /* AQUÍ ESTÁ EL ARREGLO: FONDO SÓLIDO */
+    background-color: #0f172a; /* Azul oscuro profundo (No transparente) */
+    
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Enlaces del Menú Móvil */
+.mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05); /* Línea divisoria sutil */
+    transition: background 0.3s;
+    font-family: sans-serif;
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu a:hover {
+    background-color: #1e293b; /* Cambio de color al tocar */
+    color: #b98e2d;
+}
+
+/* Clase que JS activa al picar el botón */
+.mobile-menu.active {
+    display: flex !important;
+}
+
+/* --- 4. PORTADA (HERO) --- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('img/fondomejorado.png') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.hero-logo { margin-bottom: 20px; }
+.hero-logo img { width: 280px; height: auto; object-fit: contain; display: block; }
+
+.hero-text { color: #fff; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+.hero-text h1 { font-family: sans-serif; font-size: 56px; margin-bottom: 10px; line-height: 1; text-transform: uppercase; font-weight: 900; letter-spacing: 2px; }
+.hero-text p { font-family: sans-serif; font-size: 22px; margin-bottom: 0; line-height: 1.4; font-weight: 600; letter-spacing: 1px; }
+
+/* --- 5. OTRAS SECCIONES GENERALES --- */
+.sobre-nosotros { background-color: #fff; padding: 80px 20px; }
+.sobre-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.sobre-texto h2 { font-size: 42px; color: #1a1a1a; margin-bottom: 25px; text-transform: uppercase; font-weight: bold; }
+.sobre-texto p { font-size: 20px; line-height: 1.8; color: #555; margin-bottom: 15px; }
+.sobre-imagen img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
+
+.menu-destacado { background-color: #f8f8f8; padding: 80px 20px; }
+.menu-container { max-width: 1200px; margin: 0 auto; }
+.menu-container h2 { font-size: 42px; text-align: center; color: #1a1a1a; margin-bottom: 50px; text-transform: uppercase; font-weight: bold; }
+.platillos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
+.platillo-card { background-color: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.platillo-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.platillo-card img { width: 100%; height: 250px; object-fit: cover; }
+
+.btn-ver-menu { text-align: center; }
+.btn-ver-menu a { background-color: #17a2b8; color: #fff; padding: 15px 50px; text-decoration: none; font-size: 18px; font-weight: bold; text-transform: uppercase; border-radius: 5px; display: inline-block; transition: background-color 0.3s; }
+.btn-ver-menu a:hover { background-color: #138496; }
+
+.opiniones { background-color: #fff; padding: 80px 20px; }
+.opiniones-container { max-width: 1200px; margin: 0 auto; }
+.opiniones-container h2 { font-size: 42px; color: #1a1a1a; margin-bottom: 40px; text-transform: uppercase; font-weight: bold; }
+.opiniones-container p { font-size: 20px; line-height: 1.8; color: #555; margin-bottom: 20px; }
+
+footer { background-color: #003d5c; color: #fff; padding: 50px 20px; }
+.footer-container { max-width: 1200px; margin: 0 auto; }
+.footer-container h2 { font-size: 36px; margin-bottom: 30px; text-transform: uppercase; font-weight: bold; }
+.contacto-info { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; font-size: 18px; line-height: 1.8; }
+.contacto-info div h3 { font-size: 24px; margin-bottom: 15px; color: #17a2b8; }
+.contacto-info a { color: #fff; text-decoration: none; }
+.contacto-info a:hover { color: #17a2b8; }
+
+/* --- 6. RESPONSIVE (MÓVIL) --- */
+@media (max-width: 900px) {
+    /* Escondemos los menús de escritorio */
+    .nav-desktop { display: none !important; }
+    
+    /* Mostramos el botón hamburguesa */
+    .menu-toggle { display: block; }
+    
+    /* El logo ya no necesita márgenes laterales en móvil */
+    .logo-center { margin: 0; }
+    
+    /* Forzamos que el header tenga color sólido cuando estamos en móvil para que no se vea transparente */
+    header {
+        background-color: #0f172a; 
+    }
+    
+    /* Ajustes generales de texto */
+    .hero-text h1 { font-size: 32px; }
+    .hero-text p { font-size: 18px; padding: 0 20px; }
+    .hero-logo img { width: 200px; }
+    
+    .sobre-container, .platillos-grid, .contacto-info {
+        grid-template-columns: 1fr;
+    }
+}

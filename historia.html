@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia - El Gabacho</title>
+     <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTILOS - ORDEN IMPORTANTE -->
+    <link rel="stylesheet" href="estilos-comunes.css"> <!-- PRIMERO -->
+    <link rel="stylesheet" href="historia.css"> <!-- LUEGO específicos -->
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<header>
+    <div class="header-container">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        
+        <nav class="nav-desktop nav-left">
+            <a href="index.html">INICIO</a>
+            <a href="ubicacion.html">UBICACIÓN</a>
+        </nav>
+        
+        <div class="logo-center">
+            <a href="index.html"><img src="img/logomejorado.png" alt="El Gabacho"></a>
+        </div>
+        
+        <nav class="nav-desktop nav-right">
+            <a href="menu.html">MENÚ</a>
+            <a href="galeria.html">GALERÍA</a>
+        </nav>
+        
+        <div id="nav-menu" class="mobile-menu">
+            <a href="index.html">INICIO</a>
+            <a href="ubicacion.html">UBICACIÓN</a>
+            <a href="menu.html">MENÚ</a>
+            <a href="galeria.html">GALERÍA</a>
+        </div>
+    </div>
+</header>
+    <!-- PORTADA INMERSIVA -->
+    <section class="story-hero">
+        <div class="story-hero-content">
+            <h1>UN LEGADO DE SABOR</h1>
+            <p>Indiscutiblemente lo mejor.</p>
+        </div>
+        
+        <!-- CAMBIO AQUÍ: UNA CURVA SUAVE Y SIMPLE -->
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#ffffff" fill-opacity="1" d="M0,224L80,213.3C160,203,320,181,480,181.3C640,181,800,203,960,213.3C1120,224,1280,224,1360,224L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- CONTENIDO DE LA HISTORIA -->
+    <section class="story-timeline">
+        
+        <!-- CAPÍTULO 1 -->
+        <div class="story-row">
+            <div class="story-image-container">
+                <div class="image-frame tilt-left">
+                    <img src="img/inicios.jpg" alt="Los inicios en la playa">
+                    <span class="frame-caption">Nuestros inicios</span>
+                </div>
+            </div>
+            <div class="story-text">
+                <span class="chapter-number">01</span>
+                <h2>El Comienzo</h2>
+                <p>Todo comenzó con un sueño. En las orillas de Playa Las Glorias, fundamos "El Gabacho" con una misión simple: traer el sabor auténtico del océano directo a tu mesa. Lo que empezó como una pequeña palapa familiar, pronto se convirtió en el secreto mejor guardado de los locales, gracias a esa sazón inconfundible que solo se consigue con amor y mariscos frescos del día.</p>
+            </div>
+        </div>
+
+        <!-- VALORES -->
+        <div class="values-banner">
+            <div class="value-item">
+                <i class="fas fa-heart"></i>
+                <h3>Pasión</h3>
+                <p>Cocinamos con el corazón en cada platillo.</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-anchor"></i>
+                <h3>Tradición</h3>
+                <p>Recetas familiares intactas por años.</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-fish"></i>
+                <h3>Frescura</h3>
+                <p>Del mar a tu paladar, sin escalas.</p>
+            </div>
+        </div>
+
+        <!-- CAPÍTULO 2 -->
+        <div class="story-row reverse">
+            <div class="story-text">
+                <span class="chapter-number">02</span>
+                <h2>Creciendo con la Marea</h2>
+                <p>Con el paso de los años, nuestra familia de clientes creció. La pequeña palapa se transformó en el restaurante que hoy conoces, pero nuestra esencia sigue intacta. Hemos visto generaciones crecer en nuestras mesas, celebrando cumpleaños, aniversarios y domingos familiares. "El Gabacho" dejó de ser solo un lugar para comer, para convertirse en un hogar.</p>
+            </div>
+            <div class="story-image-container">
+                <div class="image-frame tilt-right">
+                    <img src="img/restaurante.jpeg" alt="El restaurante hoy">
+                    <span class="frame-caption">Actualidad</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CAPÍTULO 3 -->
+        <div class="story-last-message">
+            <h2>Mirando hacia el Horizonte</h2>
+            <p>Hoy, seguimos escribiendo nuestra historia contigo. Gracias por ser parte de nuestra leyenda. ¡Aquí hay mariscos para rato!</p>
+            <img src="img/logomejorado.png" alt="Logo Final" class="signature-logo">
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 Restaurante El Gabacho. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

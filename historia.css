@@ -1,0 +1,291 @@
+/* =========================================
+   ESTILOS ESPECÍFICOS PARA HISTORIA
+   ========================================= */
+
+/* 1. PORTADA ÉPICA */
+.story-hero {
+    /* Fondo con un degradado elegante + imagen */
+    background: linear-gradient(to bottom, rgba(0, 30, 60, 0.5), rgba(0, 30, 60, 0.3)), 
+                url('img/fondomejorado.png') center/cover no-repeat;
+    background-attachment: fixed; /* Parallax */
+    height: 90vh; /* Altura casi completa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.story-hero-content {
+    z-index: 2;
+    padding: 0 20px;
+    margin-top: -50px; /* Subimos un poquito el contenido visualmente */
+}
+
+.story-hero-content h1 {
+    font-family: 'Times New Roman', serif; 
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.story-hero-content p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    animation: fadeInUp 2s ease-out;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- CORRECCIÓN: INDICADOR CENTRADO --- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 120px; /* Lo subimos para que no choque con la ola */
+    left: 50%;     /* Lo mandamos a la mitad de la pantalla */
+    transform: translateX(-50%); /* Lo centramos perfectamente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    opacity: 0.9;
+    animation: bounce 2s infinite;
+    z-index: 10;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    width: 100%; /* Asegura que ocupe el ancho para centrar texto */
+}
+
+.scroll-indicator i {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+/* OLA SEPARADORA */
+.wave-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
+.wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(140% + 1.3px); /* Hacemos la ola más ancha para que se vea fluida */
+    height: 150px;
+}
+
+.wave-divider .shape-fill {
+    fill: #fff; 
+}
+
+/* 2. LÍNEA DE TIEMPO */
+.story-timeline {
+    background-color: #fff;
+    padding: 80px 20px;
+    overflow: hidden;
+}
+
+.story-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto 120px auto; 
+    gap: 80px;
+}
+
+.story-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* TEXTOS */
+.story-text {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+}
+
+.chapter-number {
+    font-size: 6rem;
+    font-weight: 900;
+    color: #f4f4f4; 
+    position: absolute;
+    top: -50px;
+    left: -20px;
+    z-index: -1;
+    line-height: 1;
+    font-family: sans-serif;
+}
+
+.story-text h2 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-family: serif;
+}
+
+.story-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+/* IMÁGENES POLAROID */
+.story-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-frame {
+    background: #fff;
+    padding: 15px 15px 60px 15px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transform: rotate(-3deg); 
+    transition: transform 0.4s ease;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.image-frame:hover {
+    transform: rotate(0deg) scale(1.02) translateY(-10px);
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.image-frame.tilt-right {
+    transform: rotate(3deg);
+}
+
+.image-frame img {
+    width: 100%;
+    height: 300px; /* Altura fija para que se vean uniformes */
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.1) sepia(10%); 
+}
+
+.frame-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: cursive; 
+    font-size: 1.5rem;
+    color: #444;
+}
+
+/* 3. VALORES */
+.values-banner {
+    background-color: #f8f9fa;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 120px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.value-item i {
+    font-size: 3rem;
+    color: #17a2b8; 
+    margin-bottom: 20px;
+}
+
+.value-item h3 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+/* 4. FINAL */
+.story-last-message {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #003d5c; 
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.story-last-message h2 {
+    margin-bottom: 20px;
+    font-family: serif;
+    font-style: italic;
+}
+
+.signature-logo {
+    width: 120px;
+    margin-top: 30px;
+    filter: brightness(0) invert(1); 
+    opacity: 0.8;
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .story-hero-content h1 { font-size: 2.5rem; }
+    
+    .story-row, .story-row.reverse {
+        flex-direction: column; 
+        text-align: center;
+        gap: 40px;
+    }
+
+    .values-banner {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .image-frame {
+        transform: rotate(0deg) !important; 
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    .chapter-number { display: none; }
+    
+    .scroll-indicator { bottom: 60px; }
+}
+
+/* Forzar color blanco en el menú de escritorio */
+.nav-desktop a {
+    color: #ffffff !important; /* El !important obliga a que sea blanco */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-desktop a:hover {
+    color: #17a2b8 !important; /* Color al pasar el mouse */
+}
+
+/* Asegurar que el menú no tenga subrayados raros */
+a {
+    text-decoration: none !important;
+}
