@@ -251,7 +251,12 @@
     }
 
     .hero-title-overlay h1 {
-        font-size: 2.5rem;
+          font-size: 2.2rem;
+        letter-spacing: 3px;
+    }
+ .hero-title-overlay p {
+        font-size: 1rem;
+        letter-spacing: 2px;
     }
 
     .panels-container {
@@ -320,4 +325,17 @@
         font-size: 1.3rem;
         margin-top: 30px;
     }
+}
+@media (max-width: 900px) {
+
+    /* OCULTAMOS EL ACORDEÓN DE IMÁGENES EN MÓVIL */
+    .panels-container {
+        display: none !important;
+    }
+
+    /* Ajustamos la portada para que no quede espacio vacío */
+    .menu-interactive-hero {
+        padding-bottom: 20px;
+    }
+
 }
