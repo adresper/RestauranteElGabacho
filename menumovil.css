@@ -170,7 +170,28 @@ header.scrolled {
     width: 100%;
     z-index: 1;
 }
+/* En menumovil.css */
 
+.hero-text h1 {
+    /* Cambiamos Playfair Display por Montserrat */
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 900; /* 900 es el grosor "Black" (muy gordo) */
+    font-size: 56px;
+    margin-bottom: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra suave */
+}
+
+.hero-text p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Semi-negrita */
+    font-size: 20px;
+    margin-bottom: 0;
+    line-height: 1.4;
+    letter-spacing: 1px;
+}
 .hero-logo { margin-bottom: 20px; }
 .hero-logo img { width: 280px; height: auto; object-fit: contain; display: block; }
 

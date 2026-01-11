@@ -81,8 +81,11 @@
     height: 300px; /* Altura base */
 }
 
-/* Variación de tamaños para efecto mosaico (Opcional, requiere ajustar HTML para clases span) 
-   Por ahora dejamos altura fija para consistencia en carga automática */
+/* Items de Video (más altos) */
+.gallery-item.video-item {
+    height: 500px; /* Más alto para videos */
+    grid-row: span 2;
+}
 
 .gallery-item img {
     width: 100%;
@@ -103,7 +106,7 @@
 }
 
 /* Overlay (Capa oscura con texto) */
-.overlay {
+.overlay-info {
     position: absolute;
     top: 0;
     left: 0;
@@ -116,96 +119,197 @@
     align-items: flex-end;
     justify-content: center;
     padding-bottom: 30px;
+    color: white;
 }
 
-.gallery-item:hover .overlay {
+.gallery-item:hover .overlay-info {
     opacity: 1;
 }
 
-.overlay-text {
-    text-align: center;
-    color: white;
-    transform: translateY(20px);
-    transition: transform 0.4s ease;
+.overlay-info i {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
-.gallery-item:hover .overlay-text {
-    transform: translateY(0);
-}
-
-.overlay-text h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-.overlay-text span {
+.overlay-info p {
     font-size: 0.9rem;
-    font-weight: 300;
-    color: #ffd700; /* Dorado */
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin: 0;
 }
 
-/* LIGHTBOX (Visor) */
-.lightbox {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
+/* =========================================
+   ESTILOS PARA VIDEOS VERTICALES (480x848 = 9:16)
+   ========================================= */
+
+/* Contenedor para videos verticales */
+.video-container-vertical {
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.95);
-    flex-direction: column;
+    background-color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.video-container-vertical video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Muestra TODO el video */
+    display: block;
+}
+
+/* Botón de play sobre el video */
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    color: white;
+    opacity: 0.8;
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+.video-item:hover .video-play-button {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* =========================================
+   MODAL PARA VIDEO GRANDE (CORREGIDO)
+   ========================================= */
+
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    animation: fadeIn 0.3s;
 }
 
-.lightbox.show {
-    opacity: 1;
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 500px; /* Más estrecho para videos verticales */
+    max-height: 90vh;
 }
 
-.lightbox-content {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 5px;
-    box-shadow: 0 0 50px rgba(255,255,255,0.1);
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-}
-
-.lightbox.show .lightbox-content {
-    transform: scale(1);
-}
-
-#lightbox-caption {
-    margin-top: 20px;
-    color: #ccc;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-}
-
-.close-btn {
+.close-modal {
     position: absolute;
-    top: 30px;
-    right: 40px;
-    color: #fff;
-    font-size: 50px;
-    font-weight: bold;
+    top: -50px;
+    right: 0;
+    color: white;
+    font-size: 35px;
     cursor: pointer;
-    transition: color 0.3s;
+    z-index: 2001;
+    background: rgba(0,0,0,0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.close-btn:hover {
+.close-modal:hover {
     color: #ffd700;
+    background: rgba(0,0,0,0.8);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .gallery-header h1 { font-size: 3rem; }
-    .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-    .gallery-item { height: 200px; }
+/* CONTENEDOR ESPECÍFICO PARA VIDEOS VERTICALES EN MODAL */
+.modal-video-container {
+    width: 100%;
+    padding-bottom: 176.6%; /* PROPORCIÓN EXACTA 480x848 = 848/480*100 = 176.6% */
+    position: relative;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
 }
+
+#modalVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Muestra TODO el video sin recortar */
+    background: #000;
+}
+
+/* Para videos horizontales (si los agregas después) */
+.video-modal.horizontal .modal-content {
+    max-width: 800px; /* Más ancho para horizontales */
+}
+
+.video-modal.horizontal .modal-video-container {
+    padding-bottom: 56.25%; /* 16:9 ratio para horizontales */
+}
+
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Efecto hover para videos */
+.video-item:hover .video-container-vertical::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+    .gallery-header h1 { 
+        font-size: 3rem; 
+    }
+    
+    .gallery-grid { 
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+        gap: 10px; 
+    }
+    
+    .gallery-item { 
+        height: 200px; 
+    }
+    
+    .gallery-item.video-item {
+        height: 350px;
+    }
+    
+    /* Modal en móviles */
+    .modal-content {
+        width: 95%;
+    }
+    
+    .close-modal {
+        top: -45px;
+        right: 10px;
+        font-size: 30px;
+    }
+}
+
+/* Para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gallery-grid { 
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    }
+}
+

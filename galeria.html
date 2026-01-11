@@ -74,55 +74,148 @@
             
             <!-- IMAGEN 1: Platillo -->
             <div class="gallery-item platillos">
-                <img src="img/platillo-principal.png" alt="Camarones deliciosos">
+                <img src="videos/1.jpeg" alt="Camarones deliciosos">
                 <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
             </div>
 
             <!-- IMAGEN 2: Lugar -->
             <div class="gallery-item lugar">
-                <img src="img/restaurante.jpeg" alt="Interior del restaurante">
+                <img src="videos/vistadellugar3.jfif" alt="Interior del restaurante">
                 <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
             </div>
 
             <!-- IMAGEN 3: Platillo -->
             <div class="gallery-item platillos">
-                <img src="img/platillo-principal.png" alt="Tostada especial">
+                <img src="videos/2.jpeg" alt="Tostada especial">
                 <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
             </div>
 
             <!-- IMAGEN 4: Evento -->
-            <div class="gallery-item eventos">
-                <!-- Usa una foto de gente conviviendo si tienes -->
-                <img src="img/restaurante.jpeg" alt="Música en vivo">
-                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+         
+            <div class="gallery-item eventos video-item" onclick="openVideoModal(this)">
+                <div class="video-container-vertical">
+                    <video>
+                        <source src="videos/evento1-SA.mp4" type="video/mp4">
+                    </video>
+                    <!-- Botón de play encima -->
+                    <div class="video-play-button">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div class="overlay-info">
+                    <p>Ver video completo</p>
+                </div>
             </div>
-
+ <div class="gallery-item eventos video-item" onclick="openVideoModal(this)">
+                <div class="video-container-vertical">
+                    <video>
+                        <source src="videos/evento2-SA.mp4" type="video/mp4">
+                    </video>
+                    <!-- Botón de play encima -->
+                    <div class="video-play-button">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div class="overlay-info">
+                    <p>Ver video completo</p>
+                </div>
+            </div>
+ <div class="gallery-item eventos video-item" onclick="openVideoModal(this)">
+                <div class="video-container-vertical">
+                    <video>
+                        <source src="videos/evento3-SA.mp4" type="video/mp4">
+                    </video>
+                    <!-- Botón de play encima -->
+                    <div class="video-play-button">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div class="overlay-info">
+                    <p>Ver video completo</p>
+                </div>
+            </div>
             <!-- IMAGEN 5: Platillo -->
             <div class="gallery-item platillos">
-                <img src="img/platillo-principal.png" alt="Aguachile">
+                <img src="videos/3.jpeg" alt="Aguachile">
                 <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
             </div>
 
             <!-- IMAGEN 6: Lugar -->
             <div class="gallery-item lugar">
-                <img src="img/fondomejorado.png" alt="Vista al mar">
+                <img src="videos/vistadellugar.jpeg" alt="Vista al mar">
                 <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
             </div>
-             <!-- IMAGEN 7: Platillo -->
+              <div class="gallery-item lugar">
+                <img src="videos/vista.jfif" alt="Vista al mar">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+            
+            <!-- IMAGEN 7: Platillo -->
+            <div class="gallery-item platillos">
+                <img src="videos/4.jpeg" alt="Aguachile">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+           <div class="gallery-item platillos">
+                <img src="videos/5.jpeg" alt="Aguachile">
+                <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
+            </div>
+
              <div class="gallery-item platillos">
-                <img src="img/platillo-principal.png" alt="Aguachile">
+                <img src="videos/6.jpeg" alt="Aguachile">
                 <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
             </div>
 
             <!-- IMAGEN 8: Lugar -->
             <div class="gallery-item lugar">
-                <img src="img/fondomejorado.png" alt="Vista al mar">
+                <img src="videos/vistadellugar2.jfif" alt="Vista al mar">
                 <div class="overlay-info"><i class="fas fa-search-plus"></i></div>
             </div>
-
+            
+            <!-- VIDEO: El Lugar (con modal) -->
+            <div class="gallery-item lugar video-item" onclick="openVideoModal(this)">
+                <div class="video-container-vertical">
+                    <video>
+                        <source src="videos/vistadellugarvideo-SA.mp4" type="video/mp4">
+                    </video>
+                    <!-- Botón de play encima -->
+                    <div class="video-play-button">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div class="overlay-info">
+                    <p>Ver video completo</p>
+                </div>
+            </div>
+ <div class="gallery-item lugar video-item" onclick="openVideoModal(this)">
+                <div class="video-container-vertical">
+                    <video>
+                        <source src="videos/vistadellugarvideo2-SA.mp4" type="video/mp4">
+                    </video>
+                    <!-- Botón de play encima -->
+                    <div class="video-play-button">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div class="overlay-info">
+                    <p>Ver video completo</p>
+                </div>
+            </div>
         </div>
 
     </main>
+
+    <!-- MODAL PARA VIDEOS (va aquí, antes del footer) -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+            <div class="modal-video-container">
+                <video id="modalVideo" controls>
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -141,8 +234,7 @@
 
             // Quitar clase activa de todos los botones
             buttons.forEach(btn => btn.classList.remove('active'));
-            // Poner clase activa al botón clickeado (esto requiere un poco más de lógica si usas 'this', 
-            // pero para simplificar, al hacer click el estilo cambiará con CSS :focus o agregando clase manualmente)
+            // Poner clase activa al botón clickeado
             event.target.classList.add('active');
 
             items.forEach(item => {
@@ -160,6 +252,59 @@
                 }
             });
         }
+        
+        // ====== FUNCIONES PARA EL MODAL DE VIDEO ======
+        
+        // Modal para videos
+        let currentVideoSrc = '';
+
+        function openVideoModal(element) {
+            const video = element.querySelector('video source');
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            
+            if (video) {
+                currentVideoSrc = video.src;
+                modalVideo.querySelector('source').src = currentVideoSrc;
+                modalVideo.load();
+                
+                // Detectar si es video vertical (9:16)
+                const videoContainer = element.querySelector('.video-container-vertical');
+                if (videoContainer) {
+                    modal.classList.add('vertical-video');
+                } else {
+                    modal.classList.remove('vertical-video');
+                }
+                
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Evita scroll
+            }
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            
+            modal.style.display = 'none';
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            document.body.style.overflow = 'auto'; // Restaura scroll
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideoModal();
+            }
+        });
+
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+        
     </script>
 </body>
 </html>
