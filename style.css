@@ -211,3 +211,99 @@ footer {
 }
 
 .sidebar-opciones.activo { right: 0; }
+/* ============================================
+   ESTILOS PARA EL SIDEBAR FLOTANTE (MOBILE FIX)
+   ============================================ */
+
+/* Sidebar abierto */
+.sidebar-opciones.activo {
+    right: 0;
+}
+
+/* Opciones dentro del sidebar - FIX para móvil */
+.sidebar-opciones .opcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white !important; /* FORZAR BLANCO */
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Iconos */
+.sidebar-opciones .opcion i {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: white !important;
+}
+
+/* Texto */
+.sidebar-opciones .opcion span {
+    color: white !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hover */
+.sidebar-opciones .opcion:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-5px);
+}
+
+.sidebar-opciones .opcion:hover i,
+.sidebar-opciones .opcion:hover span {
+    color: #ffd700 !important; /* Dorado al hover */
+}
+
+/* Asegurar que en móvil se vea bien */
+@media (max-width: 768px) {
+    .sidebar-toggle {
+        top: 200px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .sidebar-toggle i {
+        font-size: 16px;
+    }
+    
+    .sidebar-opciones {
+        top: 160px;
+        width: 130px;
+        padding: 20px 0;
+        gap: 20px;
+    }
+    
+    .sidebar-opciones .opcion {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    .sidebar-opciones .opcion i {
+        font-size: 20px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .sidebar-toggle {
+        top: 180px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .sidebar-opciones {
+        top: 140px;
+        width: 110px;
+    }
+    
+    .sidebar-opciones .opcion span {
+        font-size: 11px;
+    }
+}
