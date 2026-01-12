@@ -307,3 +307,571 @@ footer {
         font-size: 11px;
     }
 }
+/* ============================================
+   ESTILOS PARA REDES SOCIALES EN HEADER, FOOTER Y SIDEBAR
+   ============================================ */
+
+/* REDES EN HEADER (Desktop) */
+.redes-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 30px;
+}
+
+.red-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.red-header.facebook {
+    background-color: #1877f2; /* Azul Facebook */
+}
+
+.red-header.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.red-header:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* REDES EN MENÚ MÓVIL */
+.redes-mobile {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.red-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.red-mobile:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.red-mobile i {
+    width: 20px;
+    text-align: center;
+}
+
+/* REDES EN SIDEBAR */
+.redes-sidebar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.red-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.red-sidebar:hover {
+    transform: scale(1.2);
+    color: #ffd700;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* REDES EN FOOTER */
+.redes-sociales {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.redes-sociales h3 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.iconos-redes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.red-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.4s ease;
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    width: 120px;
+}
+
+.red-social i {
+    font-size: 32px;
+    margin-bottom: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.red-social.facebook i {
+    background-color: #1877f2;
+    color: white;
+}
+
+.red-social.instagram i {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: white;
+}
+
+.red-social span {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hover effects en footer */
+.red-social:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.red-social:hover i {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Ubicación en footer */
+.ubicacion-footer {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ubicacion-footer i {
+    color: #ffd700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .redes-header {
+        margin-left: 20px;
+        gap: 12px;
+    }
+    
+    .red-header {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ocultar redes en header en móvil */
+    .redes-header {
+        display: none;
+    }
+    
+    /* Redes en footer más pequeñas */
+    .iconos-redes {
+        gap: 20px;
+    }
+    
+    .red-social {
+        width: 100px;
+        padding: 12px;
+    }
+    
+    .red-social i {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+    }
+    
+    .red-social span {
+        font-size: 14px;
+    }
+    
+    .redes-sociales h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .iconos-redes {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .red-social {
+        flex-direction: row;
+        width: 100%;
+        max-width: 250px;
+        justify-content: flex-start;
+        padding: 12px 20px;
+        gap: 15px;
+    }
+    
+    .red-social i {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        margin-bottom: 0;
+    }
+    
+    .redes-mobile {
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+}
+/* ============================================
+   FOOTER CON REDES SOCIALES (ESTILO ELEGANTE)
+   ============================================ */
+
+footer {
+    background: linear-gradient(135deg, #0a1931, #1a1a2e);
+    color: white;
+    padding: 60px 20px 30px;
+    border-top: 3px solid #ffd700;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ===== REDES SOCIALES EN FOOTER ===== */
+.redes-footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.titulo-redes {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.titulo-redes::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+}
+
+.iconos-redes-footer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.red-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 20px 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo igual que en header */
+.red-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.red-footer:hover::before {
+    left: 100%;
+}
+
+/* Iconos */
+.red-footer i {
+    font-size: 36px;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+/* Texto */
+.red-footer span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+/* Colores específicos (IGUAL QUE HEADER) */
+.red-footer.facebook {
+    color: white;
+    box-shadow: 0 10px 30px rgba(24, 119, 242, 0.2);
+}
+
+.red-footer.facebook i {
+    background: linear-gradient(135deg, #1877f2, #0d5fbf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.red-footer.instagram {
+    color: white;
+    box-shadow: 0 10px 30px rgba(131, 58, 180, 0.2);
+}
+
+.red-footer.instagram i {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Efectos hover */
+.red-footer:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.red-footer:hover i {
+    transform: scale(1.2);
+}
+
+.red-footer.facebook:hover {
+    background: rgba(24, 119, 242, 0.1);
+}
+
+.red-footer.instagram:hover {
+    background: rgba(131, 58, 180, 0.1);
+}
+
+/* ===== INFORMACIÓN DE CONTACTO ===== */
+.info-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px 0;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contacto-footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.contacto-footer h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #ffd700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contacto-footer p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.contacto-footer a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contacto-footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* ===== DERECHOS RESERVADOS ===== */
+.derechos-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.derechos-footer p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
+}
+
+.leyenda {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 13px !important;
+    margin-top: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 15px 20px;
+    }
+    
+    .titulo-redes {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .iconos-redes-footer {
+        gap: 20px;
+    }
+    
+    .red-footer {
+        width: 130px;
+        padding: 15px 20px;
+    }
+    
+    .red-footer i {
+        font-size: 30px;
+    }
+    
+    .red-footer span {
+        font-size: 14px;
+    }
+    
+    .info-footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contacto-footer {
+        padding: 15px;
+    }
+    
+    .contacto-footer h4 {
+        font-size: 16px;
+    }
+    
+    .contacto-footer p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .iconos-redes-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .red-footer {
+        width: 100%;
+        max-width: 250px;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 15px 25px;
+    }
+    
+    .red-footer i {
+        margin-bottom: 0;
+        font-size: 28px;
+    }
+    
+    .red-footer span {
+        font-size: 15px;
+    }
+    
+    .titulo-redes {
+        font-size: 18px;
+    }
+}

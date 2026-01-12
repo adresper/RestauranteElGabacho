@@ -2,45 +2,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Gabacho - Restaurante de Mariscos</title>
- 
-    <!-- Fuentes Google ACTUALIZADAS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Estilos -->
     <link rel="stylesheet" href="estilos-comunes.css">
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- HEADER (Con el estilo oscuro y elegante en móvil) -->
-<!-- HEADER CORRECTO -->
+
 <header>
     <div class="header-container">
-        <!-- Botón hamburguesa - solo visible en móvil -->
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        
-        <!-- Menú izquierdo escritorio -->
+
         <nav class="nav-desktop nav-left">
             <a href="ubicacion.html">UBICACIÓN</a>
             <a href="menu.html">MENU</a>
         </nav>
         
-        <!-- Logo -->
         <div class="logo-center">
             <a href="index.html"><img src="img/logomejorado.png" alt="El Gabacho"></a>
         </div>
-        
-        <!-- Menú derecho escritorio -->
+
         <nav class="nav-desktop nav-right">
             <a href="historia.html">HISTORIA</a>
             <a href="galeria.html">GALERÍA</a>
         </nav>
         
-        <!-- Menú móvil - oculto en escritorio -->
         <div id="nav-menu" class="mobile-menu">
             <a href="ubicacion.html">UBICACIÓN</a>
             <a href="menu.html">MENÚ</a>
@@ -122,13 +110,34 @@
     <!-- Galería -->
  
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <p>© 2025 El Gabacho Restaurante. Todos los derechos reservados.</p>
+   <!-- En tu index.html, modifica el footer así: -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- Redes Sociales -->
+            <!-- Redes Sociales (mismo estilo que header) -->
+            <div class="redes-footer">
+                <h3 class="titulo-redes">Síguenos en redes sociales</h3>
+                <div class="iconos-redes-footer">
+                    <a href="https://www.facebook.com/RestauranteElGabacho?locale=es_LA" target="_blank" class="red-footer facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/restauranteelgabacho" target="_blank" class="red-footer instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+            
+       
+            <!-- Derechos reservados -->
+            <div class="derechos">
+                <p>© 2025 El Gabacho Restaurante. Todos los derechos reservados.</p>
+            </div>
         </div>
-    </footer>
-
+    </div>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>
